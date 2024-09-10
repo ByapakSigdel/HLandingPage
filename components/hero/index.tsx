@@ -72,7 +72,7 @@ export const Hero = () => {
                   size={'$lg'}
                   span
                >
-                  The easiest way to build React Landing page in seconds. Save
+                  The easy way to build React Landing page in seconds. Save
                   time and focus on your project.
                </Text>
 

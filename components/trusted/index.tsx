@@ -18,7 +18,7 @@ export const Trusted = () => {
             }}
          >
             <Text h2 css={{textAlign: 'center'}}>
-               Trusted by over 10000+ customers
+               Loved by over 100+ customers
             </Text>
             <Text
                css={{
@@ -29,10 +29,9 @@ export const Trusted = () => {
                weight="normal"
                size={'$lg'}
             >
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-               eiusmod tempor incididunt ut labore et dolore magna aliqua.
+               We keep the customer and client satisfaction as our top priority.
             </Text>
-            <Grid.Container
+            {/* <Grid.Container
                gap={6}
                alignItems="center"
                justify="center"
@@ -110,8 +109,21 @@ export const Trusted = () => {
                      </Text>
                   </Flex>
                </Grid>
-            </Grid.Container>
+            </Grid.Container> */}
          </Flex>
+         <Flex
+   css={{
+      gap: '$12',
+      pt: '$8',
+      justifyContent: 'center', // centers horizontally
+      alignItems: 'center', // centers vertically
+      margin: '$12'
+      
+   }}
+   wrap={'wrap'}
+>
+   <Button>Check Testimonials</Button>
+</Flex>
 
          <Divider
             css={{position: 'absolute', inset: '0p', left: '0', mt: '$5'}}

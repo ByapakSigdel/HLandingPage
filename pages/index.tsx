@@ -23,10 +23,10 @@ const Home: NextPage = () => {
             <Trusted />
             <Features1 />
             <Features2 />
-            <Features3 />
+            <Features3 /> {/* Our Works Section */}
             <Testimonials />
             <Statistics />
-            <Plans />
+            {/* <Plans /> */}
             <Faq />
             <Trial />
             <Footer />

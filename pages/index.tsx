@@ -1,3 +1,4 @@
+
 import type {NextPage} from 'next';
 import {Nav} from '../components/navbar/navbar';
 import {Layout} from '../components/navbar/layout';
@@ -14,15 +15,20 @@ import {Faq} from '../components/faq';
 import {Trial} from '../components/trial';
 import {Footer} from '../components/footer';
 
+
 const Home: NextPage = () => {
    return (
       <Layout>
          <Nav />
-         <Box as="main">
+         <Box as="main" css={{ 
+            position: 'relative', 
+            zIndex: 1, 
+            background: 'transparent'
+         }}>
             <Hero />
             <Trusted />
             <Features1 />
-            <Features2 />
+            <Features2 />  {/* Our team section */}
             <Features3 /> {/* Our Works Section */}
             <Testimonials />
             <Statistics />

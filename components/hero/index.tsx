@@ -7,6 +7,7 @@ import {Flex} from '../styles/flex';
 export const Hero = () => {
    return (
       <>
+      
          <Flex
             css={{
                'gap': '$3',

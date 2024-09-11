@@ -27,10 +27,10 @@ export const Features2 = () => {
             }}
          >
             <Flex direction="column" align={'center'}>
-               <Text span css={{color: '$blue600'}}>
-                  Awesome Feature
+               <Text h3 span css={{color: '$blue600'}}>
+                  Our Team
                </Text>
-               <Text h3>Your title here</Text>
+               
                <Text
                   span
                   css={{
@@ -38,10 +38,7 @@ export const Features2 = () => {
                      color: '$accents8',
                   }}
                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  condimentum, nisl ut aliquam lacinia, nisl nisl aliquet nisl,
-                  nec tincidunt nisl lorem eu nunc. Sed euismod, nisl ut aliquam
-                  lacinia,
+                  At Hundred Studios, we pride ourselves on having a small yet highly skilled team that delivers exceptional results. Despite being more on the team you will be talking to two of them at most times,
                </Text>
 
                <Flex
@@ -60,8 +57,9 @@ export const Features2 = () => {
                      <BoxIcon />
                      <Flex direction={'column'}>
                         <Text h4 weight={'medium'}>
-                           Your title here
+                           Mahan Sigdel
                         </Text>
+                        <Text h6>CTO, Hundred Studios</Text>
                         <Text
                            span
                            css={{
@@ -69,9 +67,7 @@ export const Features2 = () => {
                               color: '$accents8',
                            }}
                         >
-                           Lorem ipsum dolor sit amet, consectetur adipiscing
-                           elit. Sed condimentum, nisl ut aliquam lacinia, nisl
-                           nisl aliquet nisl,
+                           “People’s lives don’t end when they die, it ends when they lose faith.”
                         </Text>
                      </Flex>
                   </Flex>
@@ -84,8 +80,9 @@ export const Features2 = () => {
                      <BoxIcon />
                      <Flex direction={'column'}>
                         <Text h4 weight={'medium'}>
-                           Your title here
+                           Sandip Adhikari
                         </Text>
+                        <Text h6>CFO, Hundred Studios</Text>
                         <Text
                            span
                            css={{
@@ -93,9 +90,9 @@ export const Features2 = () => {
                               color: '$accents8',
                            }}
                         >
-                           Lorem ipsum dolor sit amet, consectetur adipiscing
-                           elit. Sed condimentum, nisl ut aliquam lacinia, nisl
-                           nisl aliquet nisl,
+                          “If you don’t take risks, you can’t create a future!”
+
+
                         </Text>
                      </Flex>
                   </Flex>

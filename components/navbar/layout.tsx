@@ -4,13 +4,16 @@ interface LayoutProps {
    children: React.ReactNode;
 }
 
-export const Layout = ({children}: LayoutProps) => (
-   <Box
-      css={{
-         maxW: '100%',
-         background: '$background',
-      }}
-   >
-      {children}
-   </Box>
-);
+export const Layout = ({children}: LayoutProps) => {
+   return (
+      <Box css={{
+         maxW: "100%",
+         minHeight: "100vh",
+         position: 'relative',
+         zIndex: 1,
+         background: 'transparent'
+      }}>
+         {children}
+      </Box>
+   );
+};

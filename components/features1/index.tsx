@@ -1,9 +1,9 @@
 import {Divider, Grid, Text} from '@nextui-org/react';
 import React from 'react';
-import {BoxIcon} from '../icons/BoxIcon';
 import {FeatureIcon} from '../icons/FeatureIcon';
 import {Box} from '../styles/box';
 import {Flex} from '../styles/flex';
+import { icons } from '../navbar/icons';
 
 export const Features1 = () => {
    return (
@@ -28,9 +28,9 @@ export const Features1 = () => {
          >
             <Flex direction="column">
                <Text span css={{color: '$blue600'}}>
-                  Awesome Feature
+                  Incase you missed
                </Text>
-               <Text h3>Your title here</Text>
+               <Text h3>Our Services</Text>
                <Text
                   span
                   css={{
@@ -38,10 +38,7 @@ export const Features1 = () => {
                      color: '$accents8',
                   }}
                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  condimentum, nisl ut aliquam lacinia, nisl nisl aliquet nisl,
-                  nec tincidunt nisl lorem eu nunc. Sed euismod, nisl ut aliquam
-                  lacinia,
+                  At Hundred Studios, we offer web development, game development, and custom software solutions. Our focus is on delivering innovative, high-quality digital products tailored to meet your needs. Explore our services to bring your vision to life.
                </Text>
 
                <Flex
@@ -50,10 +47,10 @@ export const Features1 = () => {
                      gap: '$5',
                   }}
                >
-                  <BoxIcon />
+                  {icons.scale}
                   <Flex direction={'column'}>
                      <Text h4 weight={'medium'}>
-                        Your title here
+                        Web Development
                      </Text>
                      <Text
                         span
@@ -62,9 +59,7 @@ export const Features1 = () => {
                            color: '$accents8',
                         }}
                      >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed condimentum, nisl ut aliquam lacinia, nisl nisl
-                        aliquet nisl,
+                        Hundred Studios builds perfect, best looking websites for your business,
                      </Text>
                   </Flex>
                </Flex>
@@ -74,10 +69,10 @@ export const Features1 = () => {
                      gap: '$5',
                   }}
                >
-                  <BoxIcon />
+                  {icons.activity}
                   <Flex direction={'column'}>
                      <Text h4 weight={'medium'}>
-                        Your title here
+                     Game Development
                      </Text>
                      <Text
                         span
@@ -86,9 +81,7 @@ export const Features1 = () => {
                            color: '$accents8',
                         }}
                      >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed condimentum, nisl ut aliquam lacinia, nisl nisl
-                        aliquet nisl,
+                        We build games that are fun to play and easy to use,
                      </Text>
                   </Flex>
                </Flex>
@@ -98,10 +91,10 @@ export const Features1 = () => {
                      gap: '$5',
                   }}
                >
-                  <BoxIcon />
+                  {icons.flash}
                   <Flex direction={'column'}>
                      <Text h4 weight={'medium'}>
-                        Your title here
+                     Project Management
                      </Text>
                      <Text
                         span
@@ -110,9 +103,51 @@ export const Features1 = () => {
                            color: '$accents8',
                         }}
                      >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed condimentum, nisl ut aliquam lacinia, nisl nisl
-                        aliquet nisl,
+                        We also handle your personal/commercial projects, from small to large,
+                     </Text>
+                  </Flex>
+               </Flex>
+               <Flex
+                  css={{
+                     py: '$10',
+                     gap: '$5',
+                  }}
+               >
+                  {icons.server}
+                  <Flex direction={'column'}>
+                     <Text h4 weight={'medium'}>
+                     Digital Marketing
+                     </Text>
+                     <Text
+                        span
+                        css={{
+                           maxWidth: '400px',
+                           color: '$accents8',
+                        }}
+                     >
+                        Reach the right audience with the right message with us,
+                     </Text>
+                  </Flex>
+               </Flex>
+               <Flex
+                  css={{
+                     py: '$10',
+                     gap: '$5',
+                  }}
+               >
+                  {icons.user}
+                  <Flex direction={'column'}>
+                     <Text h4 weight={'medium'}>
+                     +Supreme Support
+                     </Text>
+                     <Text
+                        span
+                        css={{
+                           maxWidth: '400px',
+                           color: '$accents8',
+                        }}
+                     >
+                        Overcome any challenge with a supporting team ready to respond.
                      </Text>
                   </Flex>
                </Flex>

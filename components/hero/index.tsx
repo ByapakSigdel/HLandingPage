@@ -43,7 +43,7 @@ export const Hero = () => {
                         display: 'inline',
                      }}
                   >
-                     The modern landing page{' '}
+                     Crafting Digital Experiences, One Innovation at a Time.{' '}
                   </Text>
                   <Text
                      h1
@@ -51,7 +51,7 @@ export const Hero = () => {
                         display: 'inline',
                      }}
                   >
-                     for{' '}
+                     with{' '}
                   </Text>
                   <Text
                      h1
@@ -60,7 +60,7 @@ export const Hero = () => {
                      }}
                      color="primary"
                   >
-                     React developers
+                     Hundred Studios
                   </Text>
                </Box>
 
@@ -72,8 +72,8 @@ export const Hero = () => {
                   size={'$lg'}
                   span
                >
-                  The easy wway to build React Landing page in seconds. Save
-                  time and focus on your project.
+                  
+At Hundred Studios, we create innovative digital solutions—from websites to games and custom software. Let us craft your digital experience, one innovation at a time.
                </Text>
 
                <Flex
@@ -84,9 +84,9 @@ export const Hero = () => {
                   wrap={'wrap'}
                >
                   <Input placeholder="Enter your email address" size="lg" />
-                  <Button>Start Free Trial</Button>
+                  <Button>Subscribe to our Newsletter</Button>
                </Flex>
-               <Flex
+               {/* <Flex
                   wrap={'wrap'}
                   css={{
                      'gap': '$8',
@@ -120,7 +120,7 @@ export const Hero = () => {
                   >
                      <CheckIcon /> Cancel anytime.
                   </Flex>
-               </Flex>
+               </Flex> */}
             </Box>
             <Box
                css={{
@@ -130,7 +130,7 @@ export const Hero = () => {
                   },
                }}
             >
-               <img src="mock.png" />
+               <img src="mock.png" /> {/* Here we need to add a animation of our company */}
             </Box>
          </Flex>
          <Divider

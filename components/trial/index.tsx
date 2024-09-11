@@ -14,7 +14,7 @@ export const Trial = () => {
             direction={'column'}
             align={'center'}
          >
-            <Text h3>Start your free trials</Text>
+            <Text h3>Want to work with us?</Text>
             <Text
                span
                css={{
@@ -23,11 +23,10 @@ export const Trial = () => {
                   textAlign: 'center',
                }}
             >
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-               condimentum, nisl
+               Send us your CV and we will get back to you, if you fit the right candidate match.
             </Text>
 
-            <Button>Button</Button>
+            <Button>Upload CV</Button>
          </Flex>
 
          <Divider

@@ -23,3 +23,4 @@ To DO:
 Add a animation in the hero section.
 Add a hover section over the our team section
 Redefien the card in the our work section to animate it properly
+Make the faq section answers collapseable

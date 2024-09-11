@@ -20,7 +20,7 @@ export const Statistics = () => {
                      textAlign: 'center',
                   }}
                >
-                  Over 8000+ projects completed
+                  Over 2000+ user for our products
                </Text>
                <Text
                   span
@@ -29,9 +29,7 @@ export const Statistics = () => {
                      textAlign: 'center',
                   }}
                >
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Iusto provident omnis deleniti temporibus pariatur corporis
-                  aperiam
+                  Over 2000 people are using the products we created on a daily basis and they are loving it.
                </Text>
             </Flex>
             <Flex
@@ -48,15 +46,15 @@ export const Statistics = () => {
             >
                <Flex direction={'column'}>
                   <Text h2 css={{color: '$blue600'}}>
-                     $500K+
+                     50K+
                   </Text>
                   <Text span css={{textAlign: 'center'}} weight={'medium'}>
-                     Revenue
+                     Plays&Downloads
                   </Text>
                </Flex>
                <Flex direction={'column'}>
                   <Text h2 css={{color: '$blue600'}}>
-                     10+
+                     4+
                   </Text>
                   <Text span css={{textAlign: 'center'}} weight={'medium'}>
                      Products
@@ -64,15 +62,15 @@ export const Statistics = () => {
                </Flex>
                <Flex direction={'column'}>
                   <Text h2 css={{color: '$blue600'}}>
-                     $150+
+                     10+
                   </Text>
                   <Text span css={{textAlign: 'center'}} weight={'medium'}>
-                     Components
+                     Satisfied Clients
                   </Text>
                </Flex>
                <Flex direction={'column'}>
                   <Text h2 css={{color: '$blue600'}}>
-                     10+
+                     5+
                   </Text>
                   <Text span css={{textAlign: 'center'}} weight={'medium'}>
                      Employees

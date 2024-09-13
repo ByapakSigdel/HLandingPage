@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Button, Dropdown, Link, Navbar, Switch, Text } from '@nextui-org/react';
-import { ModalLogin } from '../modal';
+import { ModalLogin, ModalContact } from '../modal';
 import { icons } from './icons';
 import { useTheme as useNextTheme } from 'next-themes';
 import { useTheme } from '@nextui-org/react';
@@ -168,7 +168,7 @@ export const Nav: React.FC = () => {
 
             <Navbar.Item>
                <Button auto flat href="#">
-                  Contact Us
+                  <ModalContact />
                </Button>
             </Navbar.Item>
             <Navbar.Item hideIn={'xs'}>

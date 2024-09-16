@@ -1,4 +1,4 @@
-import {Button, Divider, Grid, Text} from '@nextui-org/react';
+import {Button, Divider, Grid, Link, Text} from '@nextui-org/react';
 import React from 'react';
 import {AcmeLogo} from '../navbar/logo';
 import {Flex} from '../styles/flex';
@@ -122,7 +122,21 @@ export const Trusted = () => {
    }}
    wrap={'wrap'}
 >
-   <Button>Check Testimonials</Button>
+<Button>
+  <a 
+    href='#testimonials' 
+    style={{ textDecoration: 'none', color: 'inherit' }} 
+    onClick={(e) => {
+      e.preventDefault(); // Prevent default anchor behavior
+      document.querySelector('#testimonials')?.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll
+    }}
+  >
+    Check Testimonials
+  </a>
+</Button>
+
+
+
 </Flex>
 
          <Divider

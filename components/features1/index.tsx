@@ -153,7 +153,16 @@ export const Features1 = () => {
                </Flex>
             </Flex>
             <Flex align={'center'}>
-               <FeatureIcon />
+            <lottie-player
+  src="https://lottie.host/70066313-35fd-49c8-b94f-2da6798ac52d/5tsvrXZSY5.json"
+  background="transparent"
+  speed="1"
+  style={{ width: '400px', height: '400px', marginLeft: '0px' }}  // Default margin for small screens
+  loop
+  autoplay
+  direction="1"
+  mode="normal">
+</lottie-player>
             </Flex>
          </Flex>
          <Divider

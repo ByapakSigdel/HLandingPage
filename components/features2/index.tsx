@@ -3,6 +3,7 @@ import React from 'react';
 import {BoxIcon} from '../icons/BoxIcon';
 import {FeatureIcon} from '../icons/FeatureIcon';
 import {Flex} from '../styles/flex';
+import { FaUser } from 'react-icons/fa';
 
 export const Features2 = () => {
    return (
@@ -54,7 +55,7 @@ export const Features2 = () => {
                         gap: '$5',
                      }}
                   >
-                     <BoxIcon />
+                     <FaUser style={{ marginTop: '7px' }} />
                      <Flex direction={'column'}>
                         <Text h4 weight={'medium'}>
                            Mahan Sigdel
@@ -77,7 +78,7 @@ export const Features2 = () => {
                         gap: '$5',
                      }}
                   >
-                     <BoxIcon />
+                   <FaUser style={{ marginTop: '7px' }} />
                      <Flex direction={'column'}>
                         <Text h4 weight={'medium'}>
                            Sandip Adhikari
@@ -99,7 +100,16 @@ export const Features2 = () => {
                </Flex>
             </Flex>
             <Flex align={'center'}>
-               <FeatureIcon />
+            <lottie-player
+  src="https://lottie.host/8b820484-1619-4952-8d73-bd315b2f8625/8zl2pQ6UpX.json"
+  background="transparent"
+  speed="1"
+  style={{ width: '400px', height: '400px', marginLeft: '0px' }}  // Default margin for small screens
+  loop
+  autoplay
+  direction="1"
+  mode="normal">
+</lottie-player>
             </Flex>
          </Flex>
 

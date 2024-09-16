@@ -24,11 +24,9 @@ export const Nav: React.FC = () => {
    const { setTheme } = useNextTheme();
    const { isDark, type } = useTheme();
    const collapseItems = [
-      'Features',
-      'Customers',
-      'Pricing',
-      'Company',
-      'Legal',
+      'Home',
+      'Work',
+      'Blog',
    ];
 
    return (
@@ -132,7 +130,10 @@ export const Nav: React.FC = () => {
                <Navbar.Link isActive href="#">
                   Home
                </Navbar.Link>
-               <Navbar.Link href="#">Work</Navbar.Link>
+               <Navbar.Link href="#works" onClick={(e) => {
+      e.preventDefault(); // Prevent default anchor behavior
+      document.querySelector('#works')?.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll
+    }}>Work</Navbar.Link>
                <Navbar.Link href="#">Blog</Navbar.Link>
             </Navbar.Content>
          </Navbar.Brand>

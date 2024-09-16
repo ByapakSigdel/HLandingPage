@@ -24,6 +24,8 @@ export const Testimonials = () => {
                   px: '$64',
                },
             }}
+
+            id='testimonials'
          >
             <Flex direction="column" css={{gap: '1.5rem'}}>
                <Card>

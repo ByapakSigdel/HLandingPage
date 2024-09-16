@@ -16,70 +16,46 @@ import { useContactForm } from '../../hooks/useContactForm';
 
 
 export const ModalLogin = () => {
-   const [visible, setVisible] = React.useState(false);
-   const handler = () => setVisible(true);
-   const closeHandler = () => {
-      setVisible(false);
-      console.log('closed');
-   };
+  const [visible, setVisible] = React.useState(false);
+  const handler = () => setVisible(true);
+  const closeHandler = () => {
+     setVisible(false);
+     console.log('closed');
+  };
 
-   return (
-      <div>
-         <Navbar.Link onClick={handler}>Login</Navbar.Link>
-         <Modal
-            closeButton
-            blur
-            aria-labelledby="modal-title"
-            open={visible}
-            onClose={closeHandler}
-         >
-            <Modal.Header>
-               <Text id="modal-title" size={18} css={{ fontFamily: 'Inter' }}>
-                  Sign in to
-                  <Text b size={18} css={{ fontFamily: 'Inter' }}>
-                     Hundred Studios
-                  </Text>
-               </Text>
-               {/* <Text h7>(Employees Only)</Text> */}
-            </Modal.Header>
-            <Modal.Body>
-               <Input
-                  clearable
-                  bordered
-                  fullWidth
-                  color="primary"
-                  size="lg"
-                  placeholder="Email"
-                  css={{ fontFamily: 'Inter' }}
-               />
-               <Input
-                  clearable
-                  bordered
-                  fullWidth
-                  color="primary"
-                  size="lg"
-                  placeholder="Password"
-                  css={{ fontFamily: 'Inter' }}
-               />
-               <Row justify="space-between">
-                  <Checkbox>
-                     <Text size={14} css={{ fontFamily: 'Inter' }}>Remember me</Text>
-                  </Checkbox>
-                  <Text size={14} css={{ fontFamily: 'Inter' }}>Forgot password?</Text>
-               </Row>
-            </Modal.Body>
-            <Modal.Footer>
-               <Button auto flat color="error" onClick={closeHandler} css={{ fontFamily: 'Inter' }}>
-                  Close
-               </Button>
-               <Button auto onClick={closeHandler} css={{ fontFamily: 'Inter' }}>
-                  Sign in
-               </Button>
-            </Modal.Footer>
-         </Modal>
-      </div>
-   );
+  return (
+     <div>
+        <Navbar.Link onClick={handler}>Login</Navbar.Link>
+        <Modal
+           closeButton
+           blur
+           aria-labelledby="modal-title"
+           open={visible}
+           onClose={closeHandler}
+        >
+           <Modal.Header css={{ display: 'flex', justifyContent: 'center' }}>
+              <Text 
+                id="modal-title" 
+                size={18} 
+                css={{ 
+                  fontFamily: 'Inter',
+                  fontWeight: 'bold',    // Emphasize text by making it bold
+                  color: '#FFA200'           // Optional: Change text color to red for danger emphasis
+                }}
+              >
+                 This is an employee only zone.
+              </Text>
+           </Modal.Header>
+           <Modal.Footer css={{ display: 'flex', justifyContent: 'center' }}>
+              <Button auto onClick={closeHandler} css={{ fontFamily: 'Inter' }}>
+                 Yes, take me there
+              </Button>
+           </Modal.Footer>
+        </Modal>
+     </div>
+  );
 };
+
 
 export const ModalContact = () => {
    const [visible, setVisible] = useState(false);

@@ -1,13 +1,17 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import {Button, Divider, Input, Text} from '@nextui-org/react';
 import React from 'react';
 import {CheckIcon} from '../icons/CheckIcon';
 import {Box} from '../styles/box';
 import {Flex} from '../styles/flex';
+import Head from 'next/head';
 
 export const Hero = () => {
    return (
       <>
-      
+      <Head>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      </Head>
          <Flex
             css={{
                'gap': '$3',
@@ -131,7 +135,19 @@ At Hundred Studios, we create innovative digital solutions—from websites to ga
                   },
                }}
             >
-               <img src="mock.png" /> {/* Here we need to add a animation of our company */}
+               <lottie-player
+  src="https://lottie.host/992faa28-eee1-439b-bb4c-b006580389ee/xThp4g9FVW.json"
+  background="transparent"
+  speed="1"
+  style={{ width: '300px', height: '300px', marginLeft: '0px' }}  // Default margin for small screens
+  loop
+  autoplay
+  direction="1"
+  mode="normal">
+</lottie-player>
+
+
+
             </Box>
          </Flex>
          <Divider

@@ -5,8 +5,13 @@ import { Box } from '../styles/box';
 import { Flex } from '../styles/flex';
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaGithub } from 'react-icons/fa';
-
-const WorkCard = ({ title, description, githubLink, workingLink }) => {
+interface WorkCardProps {
+  title: string,
+   description: string,
+    githubLink: any,
+     workingLink: any,
+}
+const WorkCard:React.FC<WorkCardProps> = ({ title, description, githubLink, workingLink }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

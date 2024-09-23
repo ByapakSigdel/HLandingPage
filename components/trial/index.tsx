@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Divider, Text } from '@nextui-org/react';
 import { Flex } from '../styles/flex';
 import { ModalUploadCV } from '../modal'; // Make sure to use the correct import path
-
+import { Player } from '@lottiefiles/react-lottie-player';
 export const Trial = () => {
    const [visible, setVisible] = useState(false);
    const handler = () => setVisible(true);
@@ -36,15 +36,12 @@ export const Trial = () => {
                   },
                }}
             >
-               <lottie-player
+               
+               <Player
                   src="https://lottie.host/f412e7ff-f159-4df1-b6d7-51d6bf42c877/DpGki9jvqB.json"
-                  background="transparent"
-                  speed="1"
-                  style={{ width: '100%', maxWidth: '400px', height: '400px' }}
+                  style={{ width: '400px', height: '400px' }}
                   loop
                   autoplay
-                  direction="1"
-                  mode="normal"
                />
             </Flex>
 

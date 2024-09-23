@@ -191,125 +191,126 @@ export const ModalContact = () => {
  };
 
  
+ interface CVProps {
+  visible: boolean;
+  closeHandler: () => void;
+}
 
- export const ModalUploadCV = ({ visible, closeHandler }) => {
-   const [fileName, setFileName] = useState('No file chosen');
-   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-   const [fullName, setFullName] = useState('');
-   const [email, setEmail] = useState('');
-   const [agreed, setAgreed] = useState(false);
- 
-   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-     const file = event.target.files?.[0];
-     if (file) {
-       setFileName(file.name);
-       setSelectedFile(file);
-     } else {
-       setFileName('No file chosen');
-       setSelectedFile(null);
-     }
-   };
- 
-   const handleSubmit = async () => {
-     if (!selectedFile || !fullName || !email || !agreed) {
-       alert('Please fill in all fields and agree to terms.');
-       return;
-     }
- 
-     try {
-       // Generate a unique file name to prevent overwriting
-       const uniqueFileName = `${Date.now()}_${selectedFile.name}`;
- 
-       // Upload file to Supabase storage
-       const { data, error } = await supabase.storage
-         .from('cvs')
-         .upload(uniqueFileName, selectedFile);
- 
-       if (error) {
-         throw new Error(error.message);
-       }
- 
-       const fileUrl = `${supabase.storageUrl}/cvs/${data?.Key}`;
- 
-       // Insert file metadata into the 'cv_submissions' table
-       const { error: insertError } = await supabase
-         .from('cv_submissions')
-         .insert({
-           full_name: fullName,
-           email,
-           file_name: selectedFile.name,
-           file_url: fileUrl,
-         });
- 
-       if (insertError) {
-         throw new Error(insertError.message);
-       }
- 
-       alert('CV submitted successfully!');
-       closeHandler();
-     } catch (error) {
-       console.error('Failed to submit CV:', error.message);
-       alert('Failed to submit CV. Please try again.');
-     }
-   };
- 
-   return (
-     <Modal closeButton aria-labelledby="modal-title" open={visible} onClose={closeHandler}>
-       <Modal.Header>
-         <Text h4 id="modal-title">Upload your CV to Hundred Studios</Text>
-       </Modal.Header>
-       <Modal.Body>
-         <Input
-           clearable
-           bordered
-           fullWidth
-           color="primary"
-           size="lg"
-           placeholder="Full Name"
-           aria-label="Full Name"
-           onChange={(e) => setFullName(e.target.value)}
-           value={fullName}
-         />
-         <Spacer y={0.5} />
-         <Input
-           clearable
-           bordered
-           fullWidth
-           color="primary"
-           size="lg"
-           placeholder="Email"
-           aria-label="Email"
-           onChange={(e) => setEmail(e.target.value)}
-           value={email}
-         />
-         <Spacer y={0.5} />
-         <Row align="center">
-           <input
-             type="file"
-             id="cv-upload"
-             accept=".pdf,.doc,.docx"
-             onChange={handleFileChange}
-             style={{ display: 'none' }}
-           />
-           <Button auto onClick={() => document.getElementById('cv-upload')?.click()}>
-             Choose File
-           </Button>
-           <Spacer x={0.5} />
-           <Text size="sm">{fileName}</Text>
-         </Row>
-         <Spacer y={0.5} />
-         <Checkbox checked={agreed} onChange={() => setAgreed(!agreed)}>
-           <Text size="sm">I agree to the terms and conditions</Text>
-         </Checkbox>
-       </Modal.Body>
-       <Modal.Footer>
-         <Button auto flat color="error" onClick={closeHandler}>
-           Close
-         </Button>
-         <Button auto onClick={handleSubmit}>
-           Submit
-         </Button>
-       </Modal.Footer>
-     </Modal>
-   );
- };
+export const ModalUploadCV: React.FC<CVProps> = ({ visible, closeHandler }) => {
+  const [fileName, setFileName] = useState('No file chosen');
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [agreed, setAgreed] = useState(false);
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setFileName(file.name);
+      setSelectedFile(file);
+    } else {
+      setFileName('No file chosen');
+      setSelectedFile(null);
+    }
+  };
+
+  const handleSubmit = async () => {
+    if (!selectedFile || !fullName || !email || !agreed) {
+      alert('Please fill in all fields and agree to terms.');
+      return;
+    }
+
+    try {
+      const uniqueFileName = `${Date.now()}_${selectedFile.name}`;
+
+      const { data, error } = await supabase.storage
+        .from('cvs')
+        .upload(uniqueFileName, selectedFile);
+
+      if (error) {
+        throw new Error((error as { message: string }).message);
+      }
+
+      const fileUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/cvs/${data.path}`;
+
+      const { error: insertError } = await supabase
+        .from('cv_submissions')
+        .insert({
+          full_name: fullName,
+          email,
+          file_name: selectedFile.name,
+          file_url: fileUrl,
+        });
+
+      if (insertError) {
+        throw new Error(insertError.message);
+      }
+
+      alert('CV submitted successfully!');
+      closeHandler();
+    } catch (error) {
+      console.error('Failed to submit CV:', (error as { message: string }).message);
+      alert('Failed to submit CV. Please try again.');
+    }
+  };
+
+  return (
+    <Modal closeButton aria-labelledby="modal-title" open={visible} onClose={closeHandler}>
+      <Modal.Header>
+        <Text h4 id="modal-title">Upload your CV to Hundred Studios</Text>
+      </Modal.Header>
+      <Modal.Body>
+        <Input
+          clearable
+          bordered
+          fullWidth
+          color="primary"
+          size="lg"
+          placeholder="Full Name"
+          aria-label="Full Name"
+          onChange={(e) => setFullName(e.target.value)}
+          value={fullName}
+        />
+        <Spacer y={0.5} />
+        <Input
+          clearable
+          bordered
+          fullWidth
+          color="primary"
+          size="lg"
+          placeholder="Email"
+          aria-label="Email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
+        <Spacer y={0.5} />
+        <Row align="center">
+          <input
+            type="file"
+            id="cv-upload"
+            accept=".pdf,.doc,.docx"
+            onChange={handleFileChange}
+            style={{ display: 'none' }}
+          />
+          <Button auto onClick={() => document.getElementById('cv-upload')?.click()}>
+            Choose File
+          </Button>
+          <Spacer x={0.5} />
+          <Text size="sm">{fileName}</Text>
+        </Row>
+        <Spacer y={0.5} />
+        <Checkbox isSelected={agreed} onChange={() => setAgreed(!agreed)}>
+          <Text size="sm">I agree to the terms and conditions</Text>
+        </Checkbox>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button auto flat color="error" onClick={closeHandler}>
+          Close
+        </Button>
+        <Button auto onClick={handleSubmit}>
+          Submit
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  );
+};

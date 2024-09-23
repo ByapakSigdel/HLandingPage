@@ -4,6 +4,7 @@ import {FeatureIcon} from '../icons/FeatureIcon';
 import {Box} from '../styles/box';
 import {Flex} from '../styles/flex';
 import { icons } from '../navbar/icons';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 export const Features1 = () => {
    return (
@@ -153,16 +154,12 @@ export const Features1 = () => {
                </Flex>
             </Flex>
             <Flex align={'center'}>
-            <lottie-player
-  src="https://lottie.host/70066313-35fd-49c8-b94f-2da6798ac52d/5tsvrXZSY5.json"
-  background="transparent"
-  speed="1"
-  style={{ width: '400px', height: '400px', marginLeft: '0px' }}  // Default margin for small screens
-  loop
-  autoplay
-  direction="1"
-  mode="normal">
-</lottie-player>
+            <Player
+                  src="https://lottie.host/70066313-35fd-49c8-b94f-2da6798ac52d/5tsvrXZSY5.json"
+                  style={{ width: '400px', height: '400px' }}
+                  loop
+                  autoplay
+               />
             </Flex>
          </Flex>
          <Divider

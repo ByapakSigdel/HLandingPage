@@ -3,8 +3,12 @@ import { Text, Divider } from '@nextui-org/react';
 import { ChevronDown } from 'lucide-react';
 import { Box } from '../styles/box';
 import { Flex } from '../styles/flex';
-
-const FAQItem = ({ question, answer, isInitiallyOpen }) => {
+interface FAQItemProps {
+  question: string;
+  answer: string;
+  isInitiallyOpen: boolean;
+}
+const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isInitiallyOpen }) => {
   const [isOpen, setIsOpen] = useState(isInitiallyOpen);
 
   return (

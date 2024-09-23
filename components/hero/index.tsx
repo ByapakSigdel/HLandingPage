@@ -5,6 +5,7 @@ import {CheckIcon} from '../icons/CheckIcon';
 import {Box} from '../styles/box';
 import {Flex} from '../styles/flex';
 import Head from 'next/head';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 export const Hero = () => {
    return (
@@ -135,18 +136,14 @@ At Hundred Studios, we create innovative digital solutions—from websites to ga
                   },
                }}
             >
-               <lottie-player
-  src="https://lottie.host/992faa28-eee1-439b-bb4c-b006580389ee/xThp4g9FVW.json"
-  background="transparent"
-  speed="1"
-  style={{ width: '300px', height: '300px', marginLeft: '0px' }}  // Default margin for small screens
-  loop
-  autoplay
-  direction="1"
-  mode="normal">
-</lottie-player>
+              
 
-
+<Player
+                  src="https://lottie.host/992faa28-eee1-439b-bb4c-b006580389ee/xThp4g9FVW.json"
+                  style={{ width: '400px', height: '400px' }}
+                  loop
+                  autoplay
+               />
 
             </Box>
          </Flex>
